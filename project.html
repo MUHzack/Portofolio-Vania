@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project & Experience - Vania Talitha</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "gold-accent": "#ffcc4d",
+              "dark-maroon": "#4a0e1c",
+              "darker-maroon": "#1a050a",
+              "soft-pink": "#fce7f3",
+              "accent-pink": "#e91e63",
+            },
+            fontFamily: {
+              montserrat: ["Montserrat", "sans-serif"],
+              fredoka: ["Fredoka One", "cursive"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style type="text/tailwindcss">
+      @layer components {
+        .nav-link {
+          @apply text-white opacity-70 hover:opacity-100 transition;
+        }
+        .nav-link.active {
+          @apply text-gold-accent font-bold opacity-100;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="font-montserrat text-white min-h-screen"
+    style="
+      background: radial-gradient(
+        circle at center,
+        #4a0e1c 0%,
+        #1a050a 45%,
+        #000000 100%
+      );
+    "
+  >
+    <nav class="fixed top-6 right-6 left-6 z-50">
+      <div class="flex justify-between items-center">
+        <!-- Logo / Title (optional) -->
+        <h1 class="text-yellow-400 font-fredoka text-2xl font-bold">
+          VaniaTalitha
+        </h1>
+
+        <!-- Hamburger Button -->
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1">
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+          <span class="w-6 h-0.5 bg-white"></span>
+        </button>
+
+        <!-- Menu Desktop -->
+        <ul class="hidden md:flex gap-8 list-none">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li>
+            <a href="project.html" class="nav-link active">Project & Experience</a>
+          </li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="menu"
+        class="hidden flex-col mt-4 bg-black/80 backdrop-blur-md rounded-xl p-6 space-y-4 md:hidden"
+      >
+        <a href="index.html" class="nav-link block">Home</a>
+        <a href="about.html" class="nav-link block">About</a>
+        <a href="project.html" class="nav-link active block">Project & Experience</a>
+        <a href="contact.html" class="nav-link block">Contact</a>
+      </div>
+    </nav>
+
+    <section class="max-w-6xl mx-auto pt-32 pb-20 px-8">
+      <h2
+        class="font-fredoka text-4xl text-gold-accent mb-12 text-center lg:text-left italic"
+      >
+        Experience & Project
+      </h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div
+          class="bg-pink-100/10 border border-pink-200/20 rounded-[2rem] p-8 shadow-xl backdrop-blur-sm"
+        >
+          <ul class="space-y-8">
+            <li class="border-b border-pink-200/10 pb-4">
+              <span class="block font-fredoka text-2xl text-gold-accent italic"
+                >Content Analysis</span
+              >
+              <span
+                class="block text-sm opacity-70 mt-1 uppercase tracking-widest text-pink-100"
+                >CV Galeri Reygatha | 2025 - Present</span
+              >
+            </li>
+            <li class="border-b border-pink-200/10 pb-4">
+              <span class="block font-fredoka text-2xl text-gold-accent italic"
+                >Host Live, Graphic Designer</span
+              >
+              <span
+                class="block text-sm opacity-70 mt-1 uppercase tracking-widest text-pink-100"
+                >CV Shalya Label | 2024</span
+              >
+            </li>
+            <li>
+              <span class="block font-fredoka text-2xl text-gold-accent italic"
+                >IT Team</span
+              >
+              <span
+                class="block text-sm opacity-70 mt-1 uppercase tracking-widest text-pink-100"
+                >PT. Insan Sejahtera Engineering | 2023</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="relative p-1 bg-white/5 border border-white/10 rounded-[2.5rem] shadow-2xl backdrop-blur-md overflow-hidden"
+        >
+          <div class="bg-black/20 p-8 rounded-[2.2rem]">
+            <ul
+              class="space-y-6 max-h-[400px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gold-accent"
+            >
+              <li
+                class="flex flex-col border-l-2 border-gold-accent/30 pl-4 py-1"
+              >
+                <span class="font-fredoka text-xl text-gold-accent italic"
+                  >Mobile Development</span
+                >
+                <span class="text-xs opacity-60 uppercase"
+                  >Universitas Negeri Surabaya | 2025</span
+                >
+              </li>
+              <li
+                class="flex flex-col border-l-2 border-gold-accent/30 pl-4 py-1"
+              >
+                <span class="font-fredoka text-xl text-gold-accent italic"
+                  >Desain Figma Mobile APP</span
+                >
+                <span class="text-xs opacity-60 uppercase"
+                  >Universitas Negeri Surabaya | 2026</span
+                >
+              </li>
+              <li
+                class="flex flex-col border-l-2 border-gold-accent/30 pl-4 py-1"
+              >
+                <span class="font-fredoka text-xl text-gold-accent italic"
+                  >Penulisan Artikel</span
+                >
+                <span class="text-xs opacity-60 uppercase"
+                  >Universitas Negeri Surabaya | 2026</span
+                >
+              </li>
+              <li
+                class="flex flex-col border-l-2 border-gold-accent/30 pl-4 py-1"
+              >
+                <span class="font-fredoka text-xl text-gold-accent italic"
+                  >Development Aplikasi LMS</span
+                >
+                <span class="text-xs opacity-60 uppercase"
+                  >Universitas Negeri Surabaya | 2026</span
+                >
+              </li>
+              <li
+                class="flex flex-col border-l-2 border-gold-accent/30 pl-4 py-1"
+              >
+                <span class="font-fredoka text-xl text-gold-accent italic"
+                  >Desain Web AQMS</span
+                >
+                <span class="text-xs opacity-60 uppercase"
+                  >PT. Insan Sejahtera Engineering | 2023</span
+                >
+              </li>
+              <li
+                class="flex flex-col border-l-2 border-gold-accent/30 pl-4 py-1"
+              >
+                <span class="font-fredoka text-xl text-gold-accent italic"
+                  >Penelitian Artikel</span
+                >
+                <span class="text-xs opacity-60 uppercase"
+                  >Universitas Negeri Surabaya | 2025</span
+                >
+              </li>
+
+              <li
+                class="flex flex-col border-l-2 border-gold-accent/30 pl-4 py-1"
+              >
+                <span class="font-fredoka text-xl text-gold-accent italic"
+                  >Desain Web Perusahaan</span
+                >
+                <span class="text-xs opacity-60 uppercase italic"
+                  >CV Galeri Reygatha | 2026</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto py-20 px-8">
+      <div class="flex flex-col items-center mb-10">
+        <div class="mb-4">
+          <svg width="60" height="20" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M3 12C3 12 5.5 9 8 12C10.5 15 13 12 13 12C13 12 15.5 9 18 12C20.5 15 23 12 23 12"
+              stroke="#e91e63"
+              stroke-width="3"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <h3
+          class="text-sm tracking-[0.3em] font-bold opacity-60 mb-2 uppercase"
+        >
+          Table Of
+        </h3>
+        <h1 class="font-fredoka text-6xl text-white">
+          CONTENT<span class="text-accent-pink ml-2">*</span>
+        </h1>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a
+          href="CV ATS .pdf"
+          target="_blank"
+          class="toc-item text-white shadow-lg shadow-pink-500/20"
+          style="background-color: #e91e63"
+        >
+          1. CV
+        </a>
+
+        <a
+          href="https://www.figma.com/design/OSltlNXh7e5MjEJApjrA6z/PROJECT"
+          target="_blank"
+          class="toc-item text-white italic uppercase"
+          style="background-color: #e91e63"
+        >
+          3. FIGMA
+        </a>
+
+        <a
+          href="https://github.com/vaniatalithaa"
+          target="_blank"
+          class="toc-item text-white italic uppercase"
+          style="background-color: #e91e63"
+        >
+          2. GIT HUB
+        </a>
+
+        <a
+          href="https://drive.google.com/drive/folders/1Cf6Z0w3GUzVSAOBdL3G1DJfYqNT8HVwo"
+          class="toc-item text-white italic uppercase"
+          style="background-color: #e91e63"
+        >
+          4. CERTIFICATE
+        </a>
+      </div>
+    </section>
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

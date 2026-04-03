@@ -1,79 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portofolio Vania Talitha</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'gold-accent': '#ffcc4d',
-                        'soft-pink': '#f2cccc',
-                    },
-                    fontFamily: {
-                        montserrat: ['Montserrat', 'sans-serif'],
-                        abril: ['Abril Fatface', 'cursive'],
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "gold-accent": "#ffcc4d",
+              "soft-pink": "#f2cccc",
+            },
+            fontFamily: {
+              montserrat: ["Montserrat", "sans-serif"],
+              abril: ["Abril Fatface", "cursive"],
+            },
+          },
+        },
+      };
     </script>
 
     <style type="text/tailwindcss">
-        @layer components {
-            .nav-dot::before {
-                content: "";
-                @apply w-1.5 h-1.5 bg-gold-accent rounded-full inline-block mr-2;
-            }
+      @layer components {
+        .nav-link {
+          @apply text-white opacity-70 hover:opacity-100 transition;
         }
+        .nav-link.active {
+          @apply text-gold-accent font-bold opacity-100;
+        }
+      }
     </style>
 
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
-</head>
-<body class="bg-black font-montserrat overflow-hidden">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    <div class="min-h-screen w-full relative flex flex-col" 
-         style="background: radial-gradient(circle at center, #4a0e1c 0%, #1a050a 45%, #000000 100%);">
-        
-        <header class="flex justify-between items-center px-12 py-8 z-10">
-            <div class="site-logo text-gold-accent font-bold text-xl tracking-widest uppercase">
-                Vaniatalitha
-            </div>
-            
-            <nav class="navbar">
-                <ul class="flex gap-8 items-center list-none">
-                    <li class="nav-dot flex items-center">
-                        <a href="index.html" class="text-white text-sm opacity-100 font-bold text-gold-accent">Home</a>
-                    </li>
-                    <li class="nav-dot flex items-center">
-                        <a href="about.html" class="text-white text-sm opacity-70 hover:opacity-100 hover:text-gold-accent transition-all">About</a>
-                    </li>
-                    <li class="nav-dot flex items-center">
-                        <a href="project&experience.html" class="text-white text-sm opacity-70 hover:opacity-100 hover:text-gold-accent transition-all">Project & Experience</a>
-                    </li>
-                    <li class="nav-dot flex items-center">
-                        <a href="contact.html" class="text-white text-sm opacity-70 hover:opacity-100 hover:text-gold-accent transition-all">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+  <body class="bg-black font-montserrat overflow-hidden">
+    <div
+      class="min-h-screen w-full relative flex flex-col"
+      style="
+        background: radial-gradient(
+          circle at center,
+          #4a0e1c 0%,
+          #1a050a 45%,
+          #000000 100%
+        );
+      "
+    >
+      <nav class="fixed top-6 right-6 left-6 z-50">
+        <div class="flex justify-between items-center">
+          <!-- Logo / Title (optional) -->
+          <h1 class="text-yellow-400 font-fredoka text-2xl font-bold">VaniaTalitha</h1>
 
-        <div class="flex-grow flex justify-center items-center">
-            <div class="text-center">
-                <h1 class="font-abril text-[12vw] leading-none text-white drop-shadow-2xl">
-                    PORTOFOLIO
-                </h1>
-                <h2 class="text-2xl md:text-4xl font-light tracking-[10px] md:tracking-[20px] text-soft-pink opacity-90 mt-2 uppercase">
-                    Vania Talitha Salsa Bila
-                </h2>
-            </div>
+          <!-- Hamburger Button -->
+          <button id="menu-btn" class="md:hidden flex flex-col gap-1">
+            <span class="w-6 h-0.5 bg-white"></span>
+            <span class="w-6 h-0.5 bg-white"></span>
+            <span class="w-6 h-0.5 bg-white"></span>
+          </button>
+
+          <!-- Menu Desktop -->
+          <ul class="hidden md:flex gap-8 list-none">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li>
+              <a href="project.html" class="nav-link"
+                >Project & Experience</a
+              >
+            </li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
         </div>
 
+        <!-- Mobile Menu -->
+        <div
+          id="menu"
+          class="hidden flex-col mt-4 bg-black/80 backdrop-blur-md rounded-xl p-6 space-y-4 md:hidden"
+        >
+          <a href="index.html" class="nav-link active block">Home</a>
+          <a href="about.html" class="nav-link block">About</a>
+          <a href="project.html" class="nav-link block"
+            >Project & Experience</a
+          >
+          <a href="contact.html" class="nav-link block">Contact</a>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <div class="flex-grow flex justify-center items-center">
+        <div class="text-center">
+          <h1
+            class="font-abril text-[12vw] leading-none text-white drop-shadow-2xl"
+          >
+            PORTOFOLIO
+          </h1>
+          <h2
+            class="text-2xl md:text-4xl font-light tracking-[10px] md:tracking-[20px] text-soft-pink opacity-90 mt-2 uppercase"
+          >
+            Vania Talitha Salsa Bila
+          </h2>
+        </div>
+      </div>
     </div>
-</body>
+
+    <!-- SCRIPT -->
+    <script>
+      const btn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
 </html>
