@@ -4,88 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Vania Talitha Salsa Bila</title>
-    <link rel="stylesheet" href="aboutt.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'gold-accent': '#ffcc4d',
+                        'dark-maroon': '#4a0e1c',
+                        'darker-maroon': '#1a050a',
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        fredoka: ['Fredoka One', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .nav-dot::before {
+                content: "";
+                @apply w-1.5 h-1.5 bg-gold-accent rounded-full inline-block mr-2;
+            }
+            /* Menghapus .photo-clip lama yang menyebabkan masalah */
+            .skill-badge {
+                @apply bg-white/10 px-4 py-2 rounded-full text-xs font-bold border border-white/10 hover:bg-gold-accent hover:text-black transition-all cursor-default;
+            }
+        }
+    </style>
+
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="font-montserrat text-white min-h-screen overflow-x-hidden" 
+      style="background: radial-gradient(circle at center, #4a0e1c 0%, #1a050a 45%, #000000 100%);">
 
-    <nav class="navbar-top">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="project&experience.html">Project & Experience</a></li>
-            <li><a href="contact.html">Contact</a></li>
+    <nav class="fixed top-8 right-12 z-50">
+        <ul class="flex gap-8 items-center list-none">
+            <li class="nav-dot flex items-center">
+                <a href="landpage.html" class="text-sm opacity-70 hover:opacity-100 transition-all">Home</a>
+            </li>
+            <li class="nav-dot flex items-center">
+                <a href="about.html" class="text-sm font-bold text-gold-accent">About</a>
+            </li>
+            <li class="nav-dot flex items-center">
+                <a href="project&experience.html" class="text-sm opacity-70 hover:opacity-100 transition-all">Project & Experience</a>
+            </li>
+            <li class="nav-dot flex items-center">
+                <a href="contact.html" class="text-sm opacity-70 hover:opacity-100 transition-all">Contact</a>
+            </li>
         </ul>
     </nav>
 
-    <div class="about-container">
+    <main class="max-w-6xl mx-auto pt-32 pb-20 px-8 grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-16 items-center">
         
-        <div class="profile-section">
-    <h1 class="hello-text">Hello!</h1>
-    <div class="image-wrapper">
-        <div class="yellow-box"></div>
-        <div class="photo-clip">
-            <img src="profile.jpeg" alt="Vania Talitha" class="profile-img">
+        <div class="relative flex flex-col items-center lg:items-start">
+    <h1 class="font-fredoka text-6xl text-gold-accent mb-12 lg:ml-10">Hello!</h1>
+    <div class="relative w-64 h-80">
+        <div class="photo-clip relative w-full h-full bg-gray-300 z-10 overflow-hidden shadow-2xl">
+            <img src="profile.jpeg" alt="Vania Talitha" class="w-full h-full object-cover">
         </div>
     </div>
-    </div>
+</div>
 
-        <div class="info-section">
-            <p class="intro-text">
-                I'm <strong>Vania Talitha Salsa Bila</strong>, a student passionate about Information Technology Education. 
+        <div class="space-y-12">
+            <p class="text-lg leading-relaxed opacity-90 border-l-4 border-gold-accent pl-6">
+                I'm <strong class="text-gold-accent">Vania Talitha Salsa Bila</strong>, a student passionate about Information Technology Education. 
                 My work combines creative web development with thoughtful educational methodology, 
                 bringing learning concepts to life through technology and design.
             </p>
 
-            <div class="skills-grid">
-                <h3>Technical Skills</h3>
-                <div class="icons-row">
-                    <div class="icon-box">HTML</div>
-                    <div class="icon-box">CSS</div>
-                    <div class="icon-box">JS</div>
-                    <div class="icon-box">PHP</div>
-                    <div class="icon-box">Canva</div>
-                    <div class="icon-box">Figma</div>
-                    <div class="icon-box">Word</div>
-                    <div class="icon-box">Excel</div>
-                    <div class="icon-box">VSC</div>
+            <div class="space-y-4">
+                <h3 class="font-fredoka text-2xl text-gold-accent italic tracking-wider">Technical Skills</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="skill-badge">HTML</span>
+                    <span class="skill-badge">CSS</span>
+                    <span class="skill-badge">JS</span>
+                    <span class="skill-badge">PHP</span>
+                    <span class="skill-badge">CANVA</span>
+                    <span class="skill-badge">FIGMA</span>
+                    <span class="skill-badge">WORD</span>
+                    <span class="skill-badge">EXCEL</span>
+                    <span class="skill-badge">VSC</span>
+                    <span class="skill-badge">CodeBlock</span>
+                    <span class="skill-badge">Sigil</span>
                 </div>
             </div>
 
-            <div class="details-flex">
-                <div class="edu-column">
-                    <h3>Education</h3>
-                    <ul>
-                        <li>
-                            <strong>SMK Telkom Sidoarjo</strong><br>
-                            2022 - 2024<br>
-                            Teknik Jaringan Akses Telekomunikasi
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="space-y-4">
+                    <h3 class="font-fredoka text-2xl text-gold-accent italic tracking-wider border-b border-gold-accent/30 pb-2">Education</h3>
+                    <ul class="space-y-6 text-sm opacity-80">
+                        <li class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-gold-accent before:rounded-full">
+                            <strong class="text-white text-base">SMP Negeri 1 Gempol</strong><br>
+                            <span class="text-gold-accent italic">2019 - 2022</span><br>
                         </li>
-                        <li>
-                            <strong>University Negeri Surabaya</strong><br>
-                            2024 - Present<br>
+                        <li class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-gold-accent before:rounded-full">
+                            <strong class="text-white text-base">SMK Telkom Sidoarjo</strong><br>
+                            <span class="text-gold-accent italic">2022 - 2024</span><br>
+                            Teknik Jaringan Akses Telekomunikas
+                        </li>
+                        <li class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-gold-accent before:rounded-full">
+                            <strong class="text-white text-base">University Negeri Surabaya</strong><br>
+                            <span class="text-gold-accent italic">2024 - Present</span><br>
                             Pendidikan Teknologi Informasi
                         </li>
                     </ul>
                 </div>
-                <div class="personal-column">
-                    <h3>Personal Skills</h3>
-                    <ul>
-                        <li>Time Management</li>
-                        <li>Attention to Detail</li>
-                        <li>Collaboration</li>
-                        <li>Adaptability</li>
-                        <li>Communication</li>
-                        <li>Think Critically</li>
-                        <li>Creativity</li>
-                        <li>Team Collaboration</li>
 
-                    </ul>
+                <div class="space-y-4">
+                    <h3 class="font-fredoka text-2xl text-gold-accent italic tracking-wider border-b border-gold-accent/30 pb-2">Personal Skills</h3>
+                    <div class="grid grid-cols-2 gap-2 text-xs font-medium uppercase opacity-80">
+                        <p class="flex items-center gap-2">✔ Time Management</p>
+                        <p class="flex items-center gap-2">✔ Collaboration</p>
+                        <p class="flex items-center gap-2">✔ Adaptability</p>
+                        <p class="flex items-center gap-2">✔ Communication</p>
+                        <p class="flex items-center gap-2">✔ Critical Thinking</p>
+                        <p class="flex items-center gap-2">✔ Creativity</p>
+                        <p class="flex items-center gap-2">✔ Detail Oriented</p>
+                        <p class="flex items-center gap-2">✔ Team Work</p>
+                        <p class="flex items-center gap-2">✔ Ledearship</p>
+                    </div>
                 </div>
             </div>
         </div>
-
-    </div>
+    </main>
 
 </body>
 </html>

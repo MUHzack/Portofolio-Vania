@@ -4,73 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me - Vania Talitha</title>
-    <link rel="stylesheet" href="contactt.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'gold-accent': '#ffcc4d',
+                        'dark-maroon': '#4a0e1c',
+                        'darker-maroon': '#1a050a',
+                        'pink-btn': '#d14d72',
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        fredoka: ['Fredoka One', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer components {
+            .nav-dot::before {
+                content: "";
+                @apply w-1.5 h-1.5 bg-gold-accent rounded-full inline-block mr-2;
+            }
+            .glass-card {
+                @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-[35px] p-10;
+            }
+        }
+    </style>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Fredoka+One&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="font-montserrat text-white min-h-screen" 
+      style="background: radial-gradient(circle at center, #4a0e1c 0%, #1a050a 45%, #000000 100%);">
 
-    <nav class="navbar-top">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="project&experience.html">Project & Experience</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+    <nav class="fixed top-8 right-12 z-50">
+        <ul class="flex gap-8 items-center list-none">
+            <li class="nav-dot flex items-center">
+                <a href="landpage.html" class="text-sm opacity-70 hover:opacity-100 transition-all">Home</a>
+            </li>
+            <li class="nav-dot flex items-center">
+                <a href="about.html" class="text-sm opacity-70 hover:opacity-100 transition-all">About</a>
+            </li>
+            <li class="nav-dot flex items-center">
+                <a href="project&experience.html" class="text-sm opacity-70 hover:opacity-100 transition-all">Project & Experience</a>
+            </li>
+            <li class="nav-dot flex items-center">
+                <a href="contact.html" class="text-sm font-bold text-gold-accent">Contact</a>
+            </li>
         </ul>
     </nav>
 
-    <div class="contact-section">
-        <h1 class="section-title">Contact Me</h1>
-        <p class="section-desc">Got a question? Send me a message, and I'll get back to you soon.</p>
+    <section class="pt-32 pb-20 px-8 text-center">
+        <h1 class="font-fredoka text-5xl md:text-6xl text-gold-accent mb-4">Contact Me</h1>
+        <p class="opacity-70 max-w-2xl mx-auto mb-12">Got a question? Send me a message, and I'll get back to you soon.</p>
 
-        <div class="contact-container">
-            <div class="contact-card form-area">
-                <h3>Get in Touch</h3>
-                <form>
-                    <div class="input-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="input-group">
-                        <input type="textarea" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-send">Send Message</button>
+        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 max-w-6xl mx-auto items-start text-left">
+            
+            <div class="glass-card flex flex-col min-h-[550px]">
+                <h3 class="text-2xl font-bold text-gold-accent mb-8">Get in Touch</h3>
+                <form class="flex flex-col h-full gap-6">
+                    <input type="text" placeholder="Your Name" required 
+                           class="bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:border-gold-accent transition-all">
+                    
+                    <input type="email" placeholder="Your Email" required 
+                           class="bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:border-gold-accent transition-all">
+                    
+                    <textarea placeholder="Your Message" rows="5" required 
+                              class="bg-white/10 border border-white/20 rounded-2xl p-4 outline-none focus:border-gold-accent transition-all resize-none"></textarea>
+                    
+                    <button type="submit" 
+                            class="mt-auto bg-pink-btn hover:brightness-125 hover:scale-[1.02] text-white font-bold py-4 rounded-full transition-all shadow-lg">
+                        Send Message
+                    </button>
                 </form>
             </div>
 
-            <div class="contact-card connect-card">
-                <h3>Connect With Me</h3>
-                <div class="social-list">
+            <div class="glass-card min-h-[550px]">
+                <h3 class="text-2xl font-bold text-gold-accent mb-8">Connect With Me</h3>
+                <div class="flex flex-col gap-5">
                     
-                    <a href="https://www.linkedin.com/in/vania-talitha-salsa-bila-46b3ba400/" target="_blank" class="social-item">
-                        <div class="social-icon">🔗</div>
-                        <div class="social-info">
-                            <p class="platform">LinkedIn</p>
+                    <a href="https://www.linkedin.com/in/vania-talitha-salsa-bila-46b3ba400/" target="_blank" 
+                       class="flex items-center gap-5 p-5 bg-white/5 border border-white/5 rounded-3xl hover:bg-white/15 hover:translate-x-2 transition-all group">
+                        <div class="text-3xl">🔗</div>
+                        <div class="flex flex-col">
+                            <p class="font-extrabold text-lg text-gold-accent">LinkedIn</p>
+                            <span class="text-sm opacity-60">Vania Talitha</span>
                         </div>
                     </a>
 
-                    <a href="https://www.instagram.com/vaniatalithaa_?igsh=MWo2dmEwNWw5NTV1dw%3D%3D&utm_source=qr" target="_blank" class="social-item">
-                        <div class="social-icon">📷</div>
-                        <div class="social-info">
-                            <p class="platform">Instagram</p>
+                    <a href="https://www.instagram.com/vaniatalithaa_/" target="_blank" 
+                       class="flex items-center gap-5 p-5 bg-white/5 border border-white/5 rounded-3xl hover:bg-white/15 hover:translate-x-2 transition-all group">
+                        <div class="text-3xl">📷</div>
+                        <div class="flex flex-col">
+                            <p class="font-extrabold text-lg text-gold-accent">Instagram</p>
+                            <span class="text-sm opacity-60">@vaniatalithaa_</span>
                         </div>
                     </a>
 
-                    <a href="https://github.com/vaniatalithaa" target="_blank" class="social-item">
-                        <div class="social-icon">💻</div>
-                        <div class="social-info">
-                            <p class="platform">Github</p>
+                    <a href="https://github.com/vaniatalithaa" target="_blank" 
+                       class="flex items-center gap-5 p-5 bg-white/5 border border-white/5 rounded-3xl hover:bg-white/15 hover:translate-x-2 transition-all group">
+                        <div class="text-3xl">💻</div>
+                        <div class="flex flex-col">
+                            <p class="font-extrabold text-lg text-gold-accent">Github</p>
+                            <span class="text-sm opacity-60">@vaniatalithaa</span>
                         </div>
                     </a>
 
-                    <a href="mailto:vtalitha02@email.com" class="social-item">
-                        <div class="social-icon">✉️</div>
-                        <div class="social-info">
-                            <p class="platform">Email</p>
+                    <a href="mailto:vtalitha02@email.com" 
+                       class="flex items-center gap-5 p-5 bg-white/5 border border-white/5 rounded-3xl hover:bg-white/15 hover:translate-x-2 transition-all group">
+                        <div class="text-3xl">✉️</div>
+                        <div class="flex flex-col">
+                            <p class="font-extrabold text-lg text-gold-accent">Email</p>
+                            <span class="text-sm opacity-60">vtalitha02@email.com</span>
                         </div>
                     </a>
 
                 </div>
-            </div> </div> </div> </body>
+            </div>
+
+        </div>
+    </section>
+
+</body>
 </html>
